@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+      <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Post-it App Project</h1>
+		<div id ="mycontainer">
+			<div class="row">
+				<mycontainer container-title="Design" content=" {{ design.first }}"></mycontainer>
+				<mycontainer container-title="Prototype"></mycontainer>
+				<mycontainer container-title="Testing"></mycontainer>
+				<mycontainer container-title="Final"></mycontainer>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<script>
+			Vue.component('mycontainer', {
+				props: ['containerTitle', 'content'],
+				template: '<div class="col s3 m3"><div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ containerTitle }} </span><p><mynote></mynote></p></div></div></div>'
+			})
+			new Vue({
+				el: '#mycontainer'
+			})
+			Vue.component('mynote', {
+				props: ['containerTitle', 'content'],
+				template: '<div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ containerTitle }} </span><p> {{ content }}</p></div></div>'
+			})
+			new Vue({
+				el: '#mynote'
+			})
+			const design = new Vue({
+				el: '#mynote',
+				data: {
+					first: 'Second Message',
+					costOfApples: 6,
+					costOfBananas: 2
+				}
+			})
+			const mytest = new Vue({
+				el: '#mycontainer',
+				data: {
+					first: 'Successful businesses know the importance of building and maintaining good working',
+					costOfApples: 6,
+					costOfBananas: 2
+				}
+			})
+		</script>
+	</body>
+</html>
