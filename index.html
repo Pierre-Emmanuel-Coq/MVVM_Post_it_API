@@ -12,7 +12,7 @@
 		<h1>Post-it App Project</h1>
 		<div id ="mycontainer">
 			<div class="row">
-				<mycontainer container-title="Design" content=" {{ design.first }}"></mycontainer>
+				<mycontainer container-title="Design" content=" {{ design.first }}"><h1>HELLO</h1></mycontainer>
 				<mycontainer container-title="Prototype"></mycontainer>
 				<mycontainer container-title="Testing"></mycontainer>
 				<mycontainer container-title="Final"></mycontainer>
@@ -22,14 +22,14 @@
 		<script>
 			Vue.component('mycontainer', {
 				props: ['containerTitle', 'content'],
-				template: '<div class="col s3 m3"><div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ containerTitle }} </span><p><mynote></mynote></p></div></div></div>'
+				template: '<div class="col s3 m3"><div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ containerTitle }} </span></div></div></div>'
 			})
 			new Vue({
 				el: '#mycontainer'
 			})
 			Vue.component('mynote', {
-				props: ['containerTitle', 'content'],
-				template: '<div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ containerTitle }} </span><p> {{ content }}</p></div></div>'
+				props: ['noteTitle', 'noteContent'],
+				template: '<div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ noteTitle }} </span><p> {{ noteContent }}</p></div></div>'
 			})
 			new Vue({
 				el: '#mynote'
@@ -37,17 +37,13 @@
 			const design = new Vue({
 				el: '#mynote',
 				data: {
-					first: 'Second Message',
-					costOfApples: 6,
-					costOfBananas: 2
+					first: 'Second Message'
 				}
 			})
 			const mytest = new Vue({
 				el: '#mycontainer',
 				data: {
-					first: 'Successful businesses know the importance of building and maintaining good working',
-					costOfApples: 6,
-					costOfBananas: 2
+					first: 'Successful businesses know the importance of building and maintaining good working'
 				}
 			})
 		</script>
