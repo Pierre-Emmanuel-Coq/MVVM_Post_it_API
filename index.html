@@ -16,7 +16,10 @@
 				<div class="col s3 m3" v-for="item in postits">
 					<div id="testcontainer">
 						<h5> {{ item.message }} </h5>
-						<ul id="array-rendering">
+						<ul id="notes">
+							<li v-for="item in designs">
+								<h4> {{ item.note }} </h4>
+							</li>
 						</ul>
 					</div>
 				</div>
