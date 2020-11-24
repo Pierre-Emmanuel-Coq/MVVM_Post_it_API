@@ -6,46 +6,22 @@
       <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
       <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+		<script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
       <link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<h1>Post-it App Project</h1>
-		<div id ="mycontainer">
-			<div class="row">
-				<mycontainer container-title="Design" content=" {{ design.first }}"><h1>HELLO</h1></mycontainer>
-				<mycontainer container-title="Prototype"></mycontainer>
-				<mycontainer container-title="Testing"></mycontainer>
-				<mycontainer container-title="Final"></mycontainer>
+		<div>
+			<div class="row" id="test">
+				<div class="col s3 m3" v-for="item in postits">
+					<div id="testcontainer">
+						<h5> {{ item.message }} </h5>
+						<ul id="array-rendering">
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
-		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-		<script>
-			Vue.component('mycontainer', {
-				props: ['containerTitle', 'content'],
-				template: '<div class="col s3 m3"><div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ containerTitle }} </span></div></div></div>'
-			})
-			new Vue({
-				el: '#mycontainer'
-			})
-			Vue.component('mynote', {
-				props: ['noteTitle', 'noteContent'],
-				template: '<div class="card blue-grey darken-1"><div class="card-content white-text"><span class="card-title"> {{ noteTitle }} </span><p> {{ noteContent }}</p></div></div>'
-			})
-			new Vue({
-				el: '#mynote'
-			})
-			const design = new Vue({
-				el: '#mynote',
-				data: {
-					first: 'Second Message'
-				}
-			})
-			const mytest = new Vue({
-				el: '#mycontainer',
-				data: {
-					first: 'Successful businesses know the importance of building and maintaining good working'
-				}
-			})
-		</script>
 	</body>
+     <script src="style.js"></script> 
 </html>
