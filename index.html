@@ -17,8 +17,8 @@
 					<div id="testcontainer">
 						<h5> {{ item.message }} </h5>
 						<ul id="notes">
-							<li v-for="item in designs">
-								<h4> {{ item.note }} </h4>
+							<li v-for="note in notes">
+								<h4 v-if="note.title == item.message"> {{ note.message }} </h4>
 							</li>
 						</ul>
 					</div>

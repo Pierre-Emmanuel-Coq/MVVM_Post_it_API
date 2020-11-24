@@ -2,7 +2,8 @@ Vue.createApp({
 	data() {
 		return {
 			postits: [{ message: 'Design' }, { message: 'Prototype' }, { message: 'Testing' }, { message: 'final' }],
-			designs: [{ note: 'work some' }, { note: 'work more' }, { note: 'again work' }]
+			notes: [{ title: 'Design', message: 'Work some'}, { title: 'Design', message: 'Work some'}, { title: 'Design', message: 'Work some'}, { title: 'Prototype',
+			 message: 'Assembler le prototype'}, { title: 'Prototype', message: 'Print les pièces'}]
 		}
 	}
 }).mount('#test')
